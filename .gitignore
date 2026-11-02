@@ -1,0 +1,14 @@
+cat <<EOF > .gitignore
+# Godot 4+ cache & build artifacts
+.godot/
+
+# Godot 3 cache
+.import/
+
+# Exported binaries
+*.translation
+bin/
+
+# Export presets (optional: omit if you want to share export configurations)
+# export_presets.cfg
+EOF

@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://en0ekajjsv78"]
+
+[ext_resource type="PackedScene" uid="uid://cde7hr2a1ljnh" path="res://assets/models/mechs/bailer.glb" id="1_mdsn1"]
+
+[node name="Bailer" type="Node3D"]
+
+[node name="bailer" parent="." instance=ExtResource("1_mdsn1")]
+
+[node name="Shoulder_R_001" parent="bailer/Armature/Skeleton3D" index="1"]
+transform = Transform3D(0.028012684, 0.6273179, -0.77825916, -0.3448185, -0.72471184, -0.59656733, -0.93825114, 0.28506973, 0.19600977, -0.3951429, 2.6587276, 0.716673)
+
+[node name="Foot_L" parent="bailer/Armature/Skeleton3D" index="3"]
+transform = Transform3D(0.2607174, 0.8804687, -0.39598164, -0.016123649, -0.40613812, -0.9136691, -0.9652806, 0.24459398, -0.09169102, -0.022870213, 0.1554631, 0.5033666)
+
+[node name="Calf_L" parent="bailer/Armature/Skeleton3D" index="4"]
+transform = Transform3D(0.28202894, 0.39718336, -0.87333006, 0.010881856, -0.9115473, -0.4110507, -0.9593442, 0.1064246, -0.26140484, -0.27366117, 0.7310357, 0.43616757)
+
+[node name="Mid_L" parent="bailer/Armature/Skeleton3D" index="5"]
+transform = Transform3D(0.26129106, -0.87209916, -0.41372678, -0.0053843, -0.4299273, 0.9028472, -0.9652449, -0.23367824, -0.11703169, 0.1611698, 0.9453985, 0.5526802)
+
+[node name="Thigh_L" parent="bailer/Armature/Skeleton3D" index="6"]
+transform = Transform3D(0.3014736, 0.50641894, -0.80786943, -0.032939315, -0.8412523, -0.5396376, -0.9529053, 0.18929705, -0.23693423, -0.23707435, 1.6069531, 0.40381837)
+
+[node name="Foot_R" parent="bailer/Armature/Skeleton3D" index="7"]
+transform = Transform3D(0.2863686, 0.9040753, 0.3172386, -0.051082443, -0.316228, 0.94730675, 0.9567565, -0.28748435, -0.04437548, -0.087585896, 0.15054566, -0.5034119)
+
+[node name="Calf_R" parent="bailer/Armature/Skeleton3D" index="8"]
+transform = Transform3D(0.27220833, 0.30300948, 0.91328394, -0.010621052, -0.94812065, 0.3177332, 0.9621795, -0.09618964, -0.2548682, -0.27310437, 0.73103535, -0.4445195)
+
+[node name="Mid_R" parent="bailer/Armature/Skeleton3D" index="9"]
+transform = Transform3D(0.24491319, -0.87049764, 0.42690906, 0.04383374, -0.42992723, -0.9017989, 0.96855354, 0.23957558, -0.06713766, 0.16092795, 0.9453983, -0.5639724)
+
+[node name="Thigh_R" parent="bailer/Armature/Skeleton3D" index="10"]
+transform = Transform3D(0.23976569, 0.5326044, 0.8116926, 0.04472503, -0.84125257, 0.5387893, 0.96980006, -0.09288018, -0.22552434, -0.25790828, 1.6069531, -0.49093214)
+
+[editable path="bailer"]
