@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvebdk5kjv7nw"]
+[gd_scene load_steps=11 format=3 uid="uid://dvebdk5kjv7nw"]
 
 [ext_resource type="Script" uid="uid://bb72j21l5kdtf" path="res://scripts/player.gd" id="1_p0vlq"]
 [ext_resource type="PackedScene" uid="uid://d3vuv2v2f8o25" path="res://scenes/cockpit_bailer.tscn" id="2_v6fml"]
@@ -16,6 +16,14 @@ height = 0.75
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lkqtr"]
 height = 2.5
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_v6fml"]
+viewport_path = NodePath("CockpitPanelL/MeshInstance3D/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3li8b"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_v6fml")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_w4w34"]
 height = 1.25
@@ -79,6 +87,12 @@ current = true
 [node name="CockpitBailer" parent="Head/Camera3D" instance=ExtResource("2_v6fml")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.48228264, -1.1997893)
 
+[node name="MeshInstance3D" parent="Head/Camera3D/CockpitBailer/CockpitPanelL" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_3li8b")
+
+[node name="Control" parent="Head/Camera3D/CockpitBailer/CockpitPanelL/MeshInstance3D/SubViewport" index="0" node_paths=PackedStringArray("player_mech")]
+player_mech = NodePath("../../../../../../..")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48427963, 0)
 visible = false
@@ -108,3 +122,9 @@ transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.3
 visible = false
 mesh = SubResource("CapsuleMesh_v6fml")
 skeleton = NodePath("")
+
+[editable path="Head/Camera3D/CockpitBailer"]
+[editable path="Head/Camera3D/CockpitBailer/CockpitPanelL"]
+[editable path="Head/Camera3D/CockpitBailer/CockpitPanelL2"]
+[editable path="Head/Camera3D/CockpitBailer/CockpitPanelMid"]
+[editable path="Head/Camera3D/CockpitBailer/CockpitPanelMid/CockpitPanelL"]

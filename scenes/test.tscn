@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c70lvdbts8clp"]
+[gd_scene load_steps=24 format=3 uid="uid://c70lvdbts8clp"]
 
 [ext_resource type="Texture2D" uid="uid://c3m8qyo36ibb6" path="res://assets/images/sand_texture.png" id="1_errlg"]
 [ext_resource type="PackedScene" uid="uid://dvebdk5kjv7nw" path="res://scenes/Player.tscn" id="2_bl13t"]
@@ -657,6 +657,14 @@ normal_texture = SubResource("ImageTexture_iyx0m")
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_j5jx5")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_74lek")])
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_iyx0m"]
+viewport_path = NodePath("Player/Head/Camera3D/CockpitBailer/CockpitPanelL/MeshInstance3D/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5jx5"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_iyx0m")
+
 [sub_resource type="BoxMesh" id="BoxMesh_bl13t"]
 size = Vector3(30, 4, 60)
 
@@ -692,6 +700,9 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="." instance=ExtResource("2_bl13t")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 123.78461, 3.3254547, 140.62875)
 bob_freq = 1.0
+
+[node name="MeshInstance3D" parent="Player/Head/Camera3D/CockpitBailer/CockpitPanelL" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_j5jx5")
 
 [node name="random buidlings" type="Node3D" parent="."]
 
@@ -833,3 +844,8 @@ skeleton = NodePath("../../random buidlings")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140, 0, 139.7)
 
 [editable path="Player"]
+[editable path="Player/Head/Camera3D/CockpitBailer"]
+[editable path="Player/Head/Camera3D/CockpitBailer/CockpitPanelL"]
+[editable path="Player/Head/Camera3D/CockpitBailer/CockpitPanelL2"]
+[editable path="Player/Head/Camera3D/CockpitBailer/CockpitPanelMid"]
+[editable path="Player/Head/Camera3D/CockpitBailer/CockpitPanelMid/CockpitPanelL"]
