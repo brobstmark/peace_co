@@ -1,3 +1,29 @@
-[gd_scene format=3 uid="uid://drs28odv7olb2"]
+[gd_scene load_steps=4 format=3 uid="uid://drs28odv7olb2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1m6b5"]
+albedo_color = Color(0.2644656, 0.21742913, 0.17020017, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bx61h"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_bx61h"]
+material = SubResource("StandardMaterial3D_bx61h")
+size = Vector2(0.2, 0.2)
 
 [node name="CockpitPanelL" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+size = Vector3(0.25, 0.25, 0.1)
+material = SubResource("StandardMaterial3D_1m6b5")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08017807)
+operation = 2
+size = Vector3(0.2, 0.2, 0.1)
+material = SubResource("StandardMaterial3D_1m6b5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.03319998)
+mesh = SubResource("QuadMesh_bx61h")
