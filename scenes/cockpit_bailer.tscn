@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3vuv2v2f8o25"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3ykh"]
+albedo_color = Color(0.52156866, 0.44313726, 0.3647059, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmtly"]
+albedo_color = Color(0.11764706, 0.05882353, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g3ykh"]
+size = Vector3(0.25, 0.25, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xmtly"]
+size = Vector3(0.5, 0.25, 0.1)
+
+[node name="CockpitBailer" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50628483, 1.2)
+visible = false
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0049283504, -0.000690341, -0.020718098)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017715454, 0.025959834, 0.063866206)
+size = Vector3(0.94229126, 0.05, 0.05)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.016536713, 0.95239043, 0.30985838)
+size = Vector3(0.89022064, 0.05, 0.05)
+
+[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.6464529, 0.53364825, 0.7444486)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D2"]
+transform = Transform3D(0.9537747, -5.2362e-09, -0.30052269, -0.035999697, 0.9927992, -0.11425295, 0.29835868, 0.11979029, 0.94690675, -0.490317, -0.49215305, -0.21101028)
+polygon = PackedVector2Array(0, 0, 0, 1, 1.0124117, 0.9793303, 1.2775121, 0.0002449751)
+depth = 0.05
+material = SubResource("StandardMaterial3D_g3ykh")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="CSGCombiner3D2"]
+transform = Transform3D(0.9537747, -5.2362e-09, -0.30052269, -0.035999697, 0.9927992, -0.11425295, 0.29835868, 0.11979029, 0.94690675, -0.490317, -0.49215305, -0.18029302)
+operation = 2
+polygon = PackedVector2Array(0.048389554, 0.052113116, 0.027020931, 0.97260016, 0.9448062, 0.94459146, 1.2041247, 0.05024737)
+depth = 0.1
+material = SubResource("StandardMaterial3D_g3ykh")
+
+[node name="CSGCombiner3D3" type="CSGCombiner3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.24799412, 0.53874314, 0.7273914)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="CSGCombiner3D3"]
+transform = Transform3D(0.953824, 0.00019824877, 0.300366, -0.03640086, 0.9927056, 0.11493715, -0.29815224, -0.12056339, 0.94687366, -0.490317, -0.49215305, 0.63330126)
+polygon = PackedVector2Array(0, 0, 0, 1, 1.0124117, 0.9793303, 1.2775121, 0.0002449751)
+depth = 0.05
+material = SubResource("StandardMaterial3D_g3ykh")
+
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="CSGCombiner3D3"]
+transform = Transform3D(0.953824, 0.00019824877, 0.300366, -0.03640086, 0.9927056, 0.11493715, -0.29815224, -0.12056339, 0.94687366, -0.490317, -0.49215305, 0.6640185)
+operation = 2
+polygon = PackedVector2Array(0.048389554, 0.052113116, 0.027020931, 0.97260016, 0.9448062, 0.94459146, 1.2041247, 0.05024737)
+depth = 0.1
+material = SubResource("StandardMaterial3D_g3ykh")
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.03898073, -0.99924, 0, 0.99924, 0.03898073, -0.5203278, -0.049388036, 0)
+polygon = PackedVector2Array(0, 0, -0.33647442, 1.159946, 1.3686719, 1.1906936, 1, 0)
+depth = 0.05
+material = SubResource("StandardMaterial3D_xmtly")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.67350316, -0.16373762, 0.7208216, 0.0014861963, 0.97545606, 0.22019011, -0.73918295, -0.14722735, 0.6572158, -0.5271145, 0.22801343, 0.6327365)
+mesh = SubResource("BoxMesh_g3ykh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.75303376, 0.14378928, -0.6420784, 0.0014861965, 0.9754562, 0.22019014, 0.6579804, -0.16676496, 0.7343376, 0.49708402, 0.22801343, 0.6327365)
+mesh = SubResource("BoxMesh_g3ykh")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.0000001, 0, 0, 0, 0.86201894, 0.5068765, 0, -0.5068767, 0.86201864, 0.0018724203, 0.017041057, 0.330536)
+mesh = SubResource("BoxMesh_xmtly")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9040974, 1.222925)
+light_color = Color(1, 0.7647059, 0.53333336, 1)
+omni_range = 2.058
